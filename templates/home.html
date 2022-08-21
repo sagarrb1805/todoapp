@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<section>
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-6 text-center">
+                <form action="" method="post" class="shadow mt-3 p-3">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" name="task" id="" class="form-control" placeholder="Task name" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="text" name="priority" id="" class="form-control" placeholder="Priority of Task" required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <input type="date" name="date" id="" class="form-control" required>
+                    </div>
+                    <div>
+                        <input type="submit" class="btn btn-success mt-2" name="" id="">
+                    </div>
+                </form>
+            </div>
+
+            
+
+
+            <div class="col-md-6 mt-2">
+                <div><h4>Tasks to be Done <button style="float: right;" class="btn btn-primary">
+                    <a href="{% url 'todoapp:logout' %}" style="color: whitesmoke; text-decoration: none;"> Logout </a></button></h4></div>
+                {% for task in tasks %}
+                <div class="card shadow mt-3">
+                    <div class="card-body">
+                        <a href="{% url 'todoapp:TaskDetailView' task.pk %}" style="text-decoration: none; color: inherit;">
+                        <h5 class="card-title">{{ task.name }}</h5></a>
+                        <p><b>{{ task.date }}</b></p>
+                        <p><b>{{ task.priority }}</b></p>
+                        <a class="btn btn-danger" href="{% url 'todoapp:TaskDeleteView' task.pk %}">Done</a>
+                        <a class="btn btn-success" href="{% url 'todoapp:TaskUpdateView' task.pk %}">Update</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

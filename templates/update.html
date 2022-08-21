@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="" id="">
+        </form>
+    </div>
+</div>
+
+<!-- 
+<div class="container">
+    <div class="row ">
+        <div class="col-md-6 text-center">
+            <form action="" method="post" class="shadow mt-3 p-3">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="task" id="" class="form-control" placeholder="Task name" required value="{{ task.name }}">
+                </div>
+                <div class="form-group mt-2">
+                    <input type="text" name="priority" id="" class="form-control" placeholder="Priority of Task" required value="{{ task.priority }}">
+                </div>
+                <div class="form-group mt-2">
+                    <input type="date" name="date" id="" class="form-control" required value="{{ task.date }}">
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-success mt-2" name="" id="">
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+{% endblock %}

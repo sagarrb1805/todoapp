@@ -1,0 +1,17 @@
+body{
+    background-color: #eee;
+}
+
+.banner{
+    width: 100%;
+    height: 100px;
+    background-color: #00004d;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.banner-text{
+    padding-top: 2%;
+    color: aliceblue;   
+    
+}
